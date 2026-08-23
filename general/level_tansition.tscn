@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://db2yaefg8tkou"]
+
+[ext_resource type="Script" uid="uid://cilxwlc1nioqw" path="res://level_transition.gd" id="1_wu3sn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wu3sn"]
+light_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsvfd"]
+
+[node name="levelTansition" type="Node2D" unique_id=735379635]
+z_index = 99
+material = SubResource("CanvasItemMaterial_wu3sn")
+script = ExtResource("1_wu3sn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=454593530]
+scale = Vector2(-1, 2)
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=385457319]
+shape = SubResource("RectangleShape2D_vsvfd")
+debug_color = Color(0, 0.7019608, 0.24313726, 0.41960785)

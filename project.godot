@@ -13,6 +13,17 @@ config_version=5
 config/name="Not Me"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+Scenemanager="*uid://djj7gonbmjikd"
+SaveManager="*uid://e0qyik7fr4ux"
+Messages="*uid://betqsdqbf8kgl"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+
 [input]
 
 left={

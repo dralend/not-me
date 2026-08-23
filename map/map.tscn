@@ -1,3 +1,50 @@
 [gd_scene format=3 uid="uid://hrpm5ykni6br"]
 
-[node name="map" type="Node2D" unique_id=900319172]
+[ext_resource type="Script" uid="uid://g20gusmibovl" path="res://map/MapNode.gd" id="1_a0dt8"]
+[ext_resource type="FontFile" uid="uid://8t2iq4bi2iko" path="res://assets/fonts/alagard.ttf" id="1_hgrid"]
+
+[node name="map" type="Control" unique_id=2052714337]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_a0dt8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=581379358]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 1.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=755510268]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_top = 11.0
+offset_right = 24.0
+offset_bottom = 12.0
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=11383808]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 12.0
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1776181973]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 24.0
+offset_right = 25.0
+offset_bottom = 12.0
+
+[node name="Label" type="Label" parent="." unique_id=1829073013]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 22.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("1_hgrid")
+theme_override_font_sizes/font_size = 4
+text = "room name"
+
+[node name="Control" type="Control" parent="." unique_id=634517646]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
