@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://dgqnpwqahh2n"]
 
-[node name="PauseMenu" type="Node" unique_id=189754604]
+[node name="PauseMenu" type="CanvasLayer" unique_id=339736072]
+
+[node name="Control" type="Control" parent="." unique_id=23060954]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

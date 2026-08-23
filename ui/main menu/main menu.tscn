@@ -1,3 +1,154 @@
 [gd_scene format=3 uid="uid://cke0bx3fbfkas"]
 
-[node name="MainMenu" type="Node" unique_id=934484012]
+[ext_resource type="FontFile" uid="uid://do01chxfqf78t" path="res://Fonts/GlitchGoblin.ttf" id="1_fervp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btibh"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.056291588, 0.056291603, 0.056291595, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xt1"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.99215686, 0.99215686, 0.72156864, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p75u"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.22352941, 0.22352941, 0.22352941, 0.69803923)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.9607843, 0.9607843, 0.92156863, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fervp"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.22352941, 0.22352941, 0.22352941, 0.69803923)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.9607843, 0.9607843, 0.92156863, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="MainMenu" type="CanvasLayer" unique_id=867437759]
+
+[node name="Control" type="Control" parent="." unique_id=804913533]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="Control" unique_id=1675341623]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title" type="Label" parent="Control" unique_id=1619684529]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_top = 117.0
+offset_right = 32.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "NOT ME"
+
+[node name="buttons" type="VBoxContainer" parent="Control" unique_id=621658599]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 305.0
+offset_right = 711.0
+offset_bottom = 613.0
+theme_override_constants/separation = 8
+
+[node name="Play" type="Button" parent="Control/buttons" unique_id=396357133]
+custom_minimum_size = Vector2(260, 55)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fervp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_btibh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_48xt1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5p75u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fervp")
+text = "Play
+"
+
+[node name="Settings" type="Button" parent="Control/buttons" unique_id=476621198]
+custom_minimum_size = Vector2(260, 55)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fervp")
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+
+[node name="HowToPlay" type="Button" parent="Control/buttons" unique_id=464705438]
+custom_minimum_size = Vector2(260, 55)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fervp")
+theme_override_font_sizes/font_size = 30
+text = "How To Play"
+
+[node name="Credits" type="Button" parent="Control/buttons" unique_id=973704741]
+custom_minimum_size = Vector2(260, 55)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fervp")
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="Quit" type="Button" parent="Control/buttons" unique_id=54229292]
+custom_minimum_size = Vector2(260, 55)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fervp")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
