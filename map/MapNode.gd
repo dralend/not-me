@@ -28,7 +28,7 @@ func _ready() -> void:
 		# check if scene has been discovered by player
 		if not SaveManager.is_area_discovered( linked_scene ):
 			visible = false
-		elif SceneManager.current_scene_uid == linked_scene:
+		elif Scenemanager.current_scene_uid == linked_scene:
 			display_player_location()
 		
 	pass
