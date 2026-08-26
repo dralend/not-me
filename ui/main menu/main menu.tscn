@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cjca0ftyjtyk7" path="res://NotMe_GameJame_00080.png" id="1_btibh"]
 [ext_resource type="FontFile" uid="uid://do01chxfqf78t" path="res://Fonts/GlitchGoblin.ttf" id="1_fervp"]
+[ext_resource type="AudioStream" uid="uid://pmgr0ut32l1u" path="res://fluorescent-light-hum.mp3" id="3_48xt1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btibh"]
 content_margin_left = 10.0
@@ -361,6 +362,44 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="Animation" id="Animation_btibh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flickerOverlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.078431375)]
+}
+
+[sub_resource type="Animation" id="Animation_48xt1"]
+resource_name = "flicker"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flickerOverlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.008333325, 0.12833333, 0.18833333, 0.24833332, 0.32833332, 0.80833334, 1.4083333, 1.48, 1.55, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.078431375), Color(0, 0, 0, 0.19607843), Color(0, 0, 0, 0.050980393), Color(0, 0, 0, 0.15686275), Color(0, 0, 0, 0.05882353), Color(0, 0, 0, 0.078431375), Color(0, 0, 0, 0.078431375), Color(0, 0, 0, 0.18039216), Color(0, 0, 0, 0.05882353), Color(0, 0, 0, 0.078431375)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5p75u"]
+_data = {
+&"RESET": SubResource("Animation_btibh"),
+&"flicker": SubResource("Animation_48xt1")
+}
+
 [node name="MainMenu" type="CanvasLayer" unique_id=867437759]
 
 [node name="Control" type="Control" parent="." unique_id=804913533]
@@ -380,6 +419,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_btibh")
 expand_mode = 2
+
+[node name="flickerOverlay" type="ColorRect" parent="Control" unique_id=1418082825]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.078431375)
 
 [node name="buttons" type="VBoxContainer" parent="Control" unique_id=621658599]
 layout_mode = 0
@@ -445,3 +493,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_av86g")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uuwim")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8pqyu")
 text = "Quit"
+
+[node name="flickerAnimation" type="AnimationPlayer" parent="Control" unique_id=1058391755]
+libraries/ = SubResource("AnimationLibrary_5p75u")
+autoplay = &"flicker"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control" unique_id=580449424]
+stream = ExtResource("3_48xt1")
+autoplay = true
